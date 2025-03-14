@@ -1,8 +1,13 @@
 import { Elysia } from "elysia";
-import { join } from "path";
+
+import path from "path";
+import url from "url";
+
+const __filename = url.fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 async function getAll(params) {
-  const dbPath = join(import.meta.dir, "database.json");
+  const dbPath = path.join(__dirname, "database.json");
 
   const db = Bun.file(dbPath);
   return await db.json();
@@ -10,7 +15,7 @@ async function getAll(params) {
 
 async function getSingel(params) {
   const { id } = params.params;
-  const dbPath = join(import.meta.dir, "database.json");
+  const dbPath = path.join(__dirname, "database.json");
 
   const file = Bun.file(dbPath);
   const content = await file.json();

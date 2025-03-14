@@ -2,6 +2,7 @@
   "name": "elysia-demo",
   "version": "1.0.50",
   "module": "src/index.js",
+  "type": "module",
   "dependencies": {
     "elysia": "latest"
   },
