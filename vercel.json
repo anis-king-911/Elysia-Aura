@@ -11,5 +11,10 @@
       "src": "/(.*)",
       "dest": "src/index.js"
     }
-  ]
+  ],
+  "functions": {
+    "index.js": {
+      "runtime": "edge"
+    }
+  }
 }
